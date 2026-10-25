@@ -12,8 +12,8 @@
 return [
     'name'        => 'CodeMirror',
     'description' => 'Extensible Code Editor',
-    'version'     => '1.0',
-    'versionDate' => '20-12-2017',
+    'version'     => '1.0.1',
+    'versionDate' => '22-10-2026',
     'author'      => 'RosGear',
     'authorUrl'   => 'https://rosgear.ru/',
     'email'       => 'info@rosgear.ru',
