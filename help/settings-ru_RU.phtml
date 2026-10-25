@@ -18,23 +18,34 @@
     <p>Форму настроек редактора можно вызвать из <a href="<?= $url('index', 'extension:rg.be.config.desk') ?>">Панели конфигурации</a> или из <a href="<?= $url('index', 'extension:rg.be.mp.wmanager') ?>">Менеджера виджетов</a>.</p>
     <h2>Поля формы</h2>
     <ul class="g-help-list">
-        <li><b>Тема.</b> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua;</li>
-        <li><b>Подсвечивать скобки.</b> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua;</li>
-        <li><b>Подсвечивать активную строку.</b> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua;</li>
-        <li><b>Сворачивать код.</b> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua;</li>
-        <li><b>Перенос длинных строк.</b> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua;</li>
-        <li><b>Отображать номер строки.</b> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</li>
-
-        <h3>Дополнения</h3>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-        <li><b>Сворачивать XML теги.</b> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua;</li>
-        <li><b>Сворачивать Markdown код.</b> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua;</li>
-        <li><b>Сворачивать отступы.</b> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua;</li>
-        <li><b>Сворачивать комментарии.</b> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua;</li>
-        <li><b>Сворачивать скобки.</b> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua;</li>
-        <li><b>Сворачивать отступы.</b> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</li>
-
-        <h3>Режимы работы редактора</h3>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+        <li><span class="g-help-fld g-help-fld_combo"></span> <b>Тема.</b><br> Выбор темы оформления редактора.<br> Тема задаёт цветовую схему для фона, текста, подсветки синтаксиса и визуальных элементов (курсор, номера строк, выделения и т.п.).<br>
+        Имена тем чувствительны к регистру и должны точно совпадать с названием CSS-класса темы.
+        По умолчанию: "default" (светлая тема - [без выбора]).</li>
+        <li><span class="g-help-fld g-help-fld_checkbox"></span> <b>Подсвечивать скобки.</b><br> При установленном флаге включает подсветку парных скобок при установке курсора рядом с одной из них.<br>
+        При включённой опции редактор выделяет соответствующую пару скобок: (), [], {}. Подсветка срабатывает, когда курсор стоит непосредственно у скобки либо между парой скобок — выделяется самая внутренняя пара.<br>
+        Работает только при наличии подключённого режима (mode) для целевого языка — логика сопоставления зависит от грамматики языка.</li>
+        <li><span class="g-help-fld g-help-fld_checkbox"></span> <b>Подсвечивать активную строку.</b><br> При установленном флаге выделяет цветом строку кода, в которой сейчас находится курсор.<br>
+        Это помогает лучше ориентироваться в большом файле и не терять текущую позицию при прокрутке.<br>
+        Можно выбрать стандартный вариант или задать свой цвет фона для этой строки.</li>
+        <li><span class="g-help-fld g-help-fld_checkbox"></span> <b>Сворачивать код.</b><br> При установленном флаге позволяет скрывать (сворачивать) и показывать (разворачивать) блоки кода, например, функции, классы или условные конструкции.<br>
+        Рядом с номерами строк появляется специальный элемент (в виде стрелки/треугольника) — клик по нему сворачивает или разворачивает блок.<br>
+        Это удобно при работе с большими файлами: можно временно скрыть детали и сосредоточиться на общей структуре кода.</li>
+        <li><span class="g-help-fld g-help-fld_checkbox"></span> <b>Перенос длинных строк.</b><br> Включает автоматический перенос строк, которые не помещаются в ширину редактора.<br>
+        При установленном флаге, длинная строка визуально разбивается на несколько строк — так не нужно пользоваться горизонтальной прокруткой. При этом в самом коде символы переноса не добавляются: это именно визуальное разбиение (soft wrap).</li>
+        <li><span class="g-help-fld g-help-fld_checkbox"></span> <b>Отображать номер строки.</b><br> При установленном флаге включается нумерация строк в левой части редактора.<br>
+        Рядом с каждой строкой кода появляется её порядковый номер — это помогает быстро ориентироваться в коде, ссылаться на конкретные места при обсуждении или отладке, а также находить ошибки по номерам строк из логов и сообщений компиляторов.</li>
     </ul>
+
+    <h3>Дополнения</h3>
+    <p>Базовые дополнения (addons) — отдельные JS-модули, расширяющие функционал редактора CodeMirror.</p>
+    <ul class="g-help-list">
+        <li><span class="g-help-fld g-help-fld_checkbox"></span> <b>Сворачивать XML теги.</b><br> При установленном флаге позволяет скрывать и показывать блоки XML-кода с помощью кнопок рядом с номерами строк. Удобно при работе с большими XML-документами: можно свернуть отдельные теги или целые ветви структуры, чтобы сосредоточиться на нужных участках.</li>
+        <li><span class="g-help-fld g-help-fld_checkbox"></span> <b>Сворачивать Markdown код.</b><br> При установленном флаге позволяет скрывать и показывать блоки в Markdown-документах (заголовки, списки, цитаты, фрагменты кода) с помощью кнопок рядом с номерами строк. Удобно при работе с длинными текстами: можно свернуть детали и видеть только структуру документа, а затем быстро раскрывать нужные разделы.</li>
+        <li><span class="g-help-fld g-help-fld_checkbox"></span> <b>Сворачивать отступы.</b><br> При установленном флаге позволяет скрывать и показывать блоки кода, сгруппированные по уровню отступа (например, тело функции, цикл или условный блок), с помощью кнопок рядом с номерами строк. Удобно при работе с языками, где структура задаётся отступами (Python, YAML) или когда нужно быстро «схлопнуть» вложенные конструкции, чтобы видеть общую логику файла.</li>
+        <li><span class="g-help-fld g-help-fld_checkbox"></span> <b>Сворачивать комментарии.</b><br> При установленном флаге позволяет скрывать и показывать блоки комментариев в коде с помощью кнопок рядом с номерами строк. Удобно при работе с большими файлами: можно временно убрать закомментированный код или длинные пояснения, чтобы видеть только рабочую логику, а затем быстро вернуть их при необходимости.</li>
+        <li><span class="g-help-fld g-help-fld_checkbox"></span> <b>Сворачивать скобки.</b><br> При установленном флаге позволяет скрывать и показывать блоки кода, ограниченные парными скобками ((), [], {}), с помощью кнопок рядом с номерами строк. Удобно при работе с глубоко вложенными конструкциями: можно временно свернуть внутренние блоки, чтобы видеть общую структуру функции, объекта или условия, а затем быстро раскрыть нужный фрагмент.</li>
+    </ul>
+
+    <h3>Режимы работы редактора</h3>
+    <p><span class="g-help-fld g-help-fld_textarea"></span> Режимы работы — это настройка, которая говорит редактору, какой язык кода он сейчас показывает и как его правильно подсвечивать. Вы выбираете режим (например, JavaScript, Python, HTML или Markdown), и редактор сразу делает код понятным: выделяет цветом ключевые слова, комментарии, названия функций и другие части. Режимов можно указать несколько.</p>
 </article>
